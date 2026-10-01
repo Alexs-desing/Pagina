@@ -1,0 +1,143 @@
+:root {
+  --banda: #e5ced8;
+  --panel: #fdf3f6;
+  --pill: #e5ced8;
+  --acento: #8a6b7a;
+  --texto: #2b2328;
+  --suave: #6b5a63;
+  --fondo: #efe6ea;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --fondo: #231c20; }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.55;
+  padding: 2rem 1rem 5rem;
+}
+
+.cv {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  box-shadow: 0 10px 40px rgba(60, 30, 45, .18);
+  overflow: hidden;
+}
+
+/* Banda superior con el nombre */
+.cv-top {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  background: var(--banda);
+  padding: 3rem 2.5rem 3rem calc(300px + 2.5rem);
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cv-top h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  color: var(--acento);
+}
+.titulo { margin-top: .5rem; color: var(--suave); font-weight: 500; }
+
+/* Columna izquierda */
+.cv-side {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  background: var(--panel);
+  padding: 1.5rem 1.4rem 2rem;
+  margin: 0 0 0 0;
+  z-index: 1;
+}
+.foto {
+  display: block;
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  object-position: 50% 25%;
+  border-radius: 50%;
+  border: 6px solid var(--pill);
+  margin: 1rem auto 2rem;
+  background: #fff;
+}
+
+.cv-main { grid-column: 2; grid-row: 2; padding: 2rem 2.5rem 2.5rem; }
+
+section { margin-bottom: 1.8rem; }
+
+/* Encabezados en píldora, como el ejemplo */
+.pill {
+  background: var(--pill);
+  color: var(--texto);
+  border-radius: 999px;
+  padding: .55rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .9rem;
+}
+.cv-side .pill { text-align: center; }
+
+ul { list-style: none; }
+li { position: relative; padding-left: 1rem; margin-bottom: .4rem; font-size: .93rem; }
+li::before {
+  content: "";
+  position: absolute; left: 0; top: .6em;
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--acento);
+}
+li strong { font-weight: 600; }
+li small { display: block; color: var(--suave); font-size: .82rem; }
+.cv-side p, .cv-main p { font-size: .93rem; padding: 0 .4rem; }
+.cv-side ul, .cv-main ul { padding: 0 .4rem; }
+a { color: inherit; text-decoration-color: var(--acento); text-underline-offset: 3px; }
+a:hover { color: var(--acento); }
+
+/* Habilidades técnicas como etiquetas */
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chips li {
+  padding: .25rem .8rem;
+  margin: 0;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 1px solid var(--pill);
+  font-size: .85rem;
+}
+.chips li::before { display: none; }
+
+.imprimir {
+  position: fixed; right: 1.2rem; bottom: 1.2rem;
+  background: var(--acento); color: #fff; border: 0;
+  padding: .75rem 1.3rem; border-radius: 999px;
+  font: 600 .9rem "Inter", sans-serif; cursor: pointer;
+}
+.imprimir:hover { background: #6f5262; }
+.imprimir:focus-visible, a:focus-visible { outline: 3px solid #3b2a34; outline-offset: 3px; }
+
+/* Móvil */
+@media (max-width: 760px) {
+  .cv { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .cv-top, .cv-side, .cv-main { grid-column: 1; grid-row: auto; }
+  .cv-top { padding: 2rem 1.5rem; min-height: 0; text-align: center; order: 1; }
+  .cv-side { order: 2; }
+  .cv-main { order: 3; padding: 1.5rem; }
+}
+
+/* Impresión / PDF */
+@media print {
+  body { background: #fff; padding: 0; }
+  .cv { box-shadow: none; max-width: 100%; }
+  .imprimir { display: none; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
