@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Currículum | Desarrolladora de software</title>
+  <title>Beczabe Hernandez | Desarrolladora de software</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,53 +14,20 @@
     <header class="cv-top">
       <h1 id="nombre"></h1>
       <p id="titulo" class="titulo"></p>
+      <p class="estado"><span class="punto"></span><span id="estado"></span></p>
+      <div class="acciones">
+        <button id="contratar" class="btn" type="button">Contrátame</button>
+        <button id="alternar" class="btn btn-claro" type="button" aria-pressed="false">Abrir todo</button>
+      </div>
     </header>
 
     <aside class="cv-side">
-      <img id="foto" class="foto" src="foto.png" alt="Foto de perfil">
-      <section>
-        <h2 class="pill">Acerca de mí</h2>
-        <p id="acerca"></p>
-      </section>
-      <section>
-        <h2 class="pill">Contacto</h2>
-        <ul id="contacto"></ul>
-      </section>
-      <section>
-        <h2 class="pill">Educación</h2>
-        <ul id="educacion"></ul>
-      </section>
-      <section>
-        <h2 class="pill">Experiencia laboral</h2>
-        <ul id="experiencia"></ul>
-      </section>
+      <img id="foto" class="foto" src="foto.png" alt="Foto de Beczabe Hernandez">
+      <div id="col-izq"></div>
     </aside>
 
-    <div class="cv-main">
-      <section>
-        <h2 class="pill">Información personal</h2>
-        <ul id="personal"></ul>
-      </section>
-      <section>
-        <h2 class="pill">Objetivo profesional</h2>
-        <p id="objetivo"></p>
-      </section>
-      <section>
-        <h2 class="pill">Habilidades técnicas</h2>
-        <ul id="tecnicas" class="chips"></ul>
-      </section>
-      <section>
-        <h2 class="pill">Habilidades personales</h2>
-        <ul id="blandas"></ul>
-      </section>
-      <section>
-        <h2 class="pill">Proyectos</h2>
-        <ul id="proyectos"></ul>
-      </section>
-    </div>
+    <div class="cv-main" id="col-der"></div>
   </main>
-
-  <button id="imprimir" class="imprimir" type="button">Descargar PDF</button>
   <script src="script.js"></script>
 </body>
 </html>
