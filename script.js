@@ -5,7 +5,7 @@
 const datos = {
   nombre: "Beczabe Hernandez",
   titulo: "Desarrolladora de software full stack",
-  estado: "Contratada",
+  estado: "disponible",
   correo: "beczabe.hernandez@gmail.com",
 
   izquierda: [
