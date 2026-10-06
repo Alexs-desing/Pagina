@@ -5,22 +5,22 @@
 const datos = {
   nombre: "Beczabe Hernandez",
   titulo: "Desarrolladora de software full stack",
-  estado: "Disponible para trabajar",
-  correo: "beczabe.hernandez@ejemplo.com",
+  estado: "Contratada",
+  correo: "beczabe.hernandez@gmail.com",
 
   izquierda: [
     { titulo: "Acerca de mí", tipo: "texto",
       contenido: "Desarrolladora de software organizada y responsable, con buenas relaciones interpersonales. Disfruto convertir ideas en aplicaciones web claras, rápidas y fáciles de usar, y aprender tecnologías nuevas cada semana." },
     { titulo: "Contacto", tipo: "enlaces",
       contenido: [
-        { texto: "Correo: beczabe.hernandez@ejemplo.com", url: "mailto:beczabe.hernandez@ejemplo.com" },
+        { texto: "Correo: beczabe.hernandez@gmail.com", url: "mailto:beczabe.hernandez@ejemplo.com" },
         { texto: "Teléfono: 961 000 0000", url: "tel:9610000000" },
         { texto: "GitHub: github.com/beczabe", url: "https://github.com/beczabe" },
         { texto: "LinkedIn: linkedin.com/in/beczabe", url: "https://linkedin.com/in/beczabe" }
       ] },
     { titulo: "Educación", tipo: "detalle",
       contenido: [
-        { t: "Ingeniería en Desarrollo de Software", d: "Universidad de ejemplo, 2020 - 2024" },
+        { t: "Ingeniería en Desarrollo de Software", d: "Tecnologico superior de Cintalapa, 2020 - 2024" },
         { t: "Curso de JavaScript moderno", d: "Plataforma en línea, 2023" },
         { t: "Certificación en bases de datos SQL", d: "2024" }
       ] },
